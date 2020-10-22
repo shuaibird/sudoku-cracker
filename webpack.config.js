@@ -89,7 +89,7 @@ module.exports = {
 			inlineSource: isInline ? '.(js|css)$' : '',
 			hash: isInline ? false : true,
 			template: './src/index.html',
-			title: 'svelte-boilerplate'
+			title: 'Sudoku Cracker'
 		}),
 		new HtmlWebpackInlineSourcePlugin()
 	],
