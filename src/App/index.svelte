@@ -5,9 +5,12 @@
   let puzzle
   let answer
   let form
+  let cracking = false
 
   function crack() {
+    cracking = true
     const { input, output } = form.crack()
+    cracking = false
     puzzle = input
     answer = output
   }
@@ -69,8 +72,14 @@
       {/if}
     </div>
     <div class="controller">
-      <button on:click={crack} disabled={!notAnswered}>Crack</button>
-      <button on:click={reset}>Reset</button>
+      <button
+        on:click={crack}
+        disabled={!notAnswered || cracking}
+      >{cracking ? 'Cracking' : 'Crack'}</button>
+      <button
+        on:click={reset}
+        disabled={cracking}
+      >Reset</button>
     </div>
   </div>
 </div>
