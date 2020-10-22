@@ -1,20 +1,18 @@
 <script>
-    import Layout from '@Components/Layout';
-    import ImageExample from '@Components/ImageExample';
-    import HelloWorld from '@Components/HelloWorld';
+    
 </script>
 
-<style src="./style.scss">
-
+<style>
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 </style>
 
-<Layout>
-    <div class="container">
-        <div class="container__top">
-            <ImageExample />
-        </div>
-        <div class="container__middle">
-            <HelloWorld />
-        </div>
+
+<div class="container">
+    <div class="app">
+        <div></div>
     </div>
-</Layout>
+</div>
