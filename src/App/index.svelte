@@ -16,14 +16,14 @@
   }
 
   function reset() {
-    if (notAnswered) {
-      form.clear()
-    } else {
+    if (done) {
       answer = undefined
+    } else {
+      form.clear()
     }
   }
 
-  $: notAnswered = answer === undefined
+  $: done = answer !== undefined
 </script>
 
 <style>
@@ -65,16 +65,16 @@
   <div class="app">
     <h1 class="title">Sudoku Cracker</h1>
     <div class="view">
-      {#if notAnswered}
-        <Input bind:this={form} />
-      {:else}
+      {#if done}
         <Output {puzzle} {answer} />
+      {:else}
+        <Input bind:this={form} />
       {/if}
     </div>
     <div class="controller">
       <button
         on:click={crack}
-        disabled={!notAnswered || cracking}
+        disabled={done || cracking}
       >{cracking ? 'Cracking' : 'Crack'}</button>
       <button
         on:click={reset}
