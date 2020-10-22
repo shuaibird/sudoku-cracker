@@ -4,8 +4,16 @@
 
   let form
 
+  const ALL_POS = [...Array(81)].map((_, p) => p)
+
   export function crack() {
-    return solve([...Array(81)].map((_, p) => Number(form[p].value)))
+    const input = ALL_POS.map((p) => Number(form[p].value) || false)
+    const output = solve(input)
+    return { input, output }
+  }
+
+  export function clear() {
+    ALL_POS.forEach((p) => form[p].value = '')
   }
 </script>
 

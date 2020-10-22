@@ -2,15 +2,22 @@
   import Input from '../Components/Input.svelte'
   import Output from '../Components/Output.svelte'
 
+  let puzzle
   let answer
   let form
 
   function crack() {
-    answer = form.crack()
+    const { input, output } = form.crack()
+    puzzle = input
+    answer = output
   }
 
   function reset() {
-    answer = undefined
+    if (notAnswered) {
+      form.clear()
+    } else {
+      answer = undefined
+    }
   }
 
   $: notAnswered = answer === undefined
@@ -58,7 +65,7 @@
       {#if notAnswered}
         <Input bind:this={form} />
       {:else}
-        <Output {answer} />
+        <Output {puzzle} {answer} />
       {/if}
     </div>
     <div class="controller">
