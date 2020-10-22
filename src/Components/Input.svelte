@@ -51,7 +51,7 @@
   {#each ROWS as row}
     <div class="row">
       {#each row as square}
-        <input name={square} type="number" />
+        <input name={square} type="number" min="1" max="9" maxlength="1" />
       {/each}
     </div>
   {/each}
