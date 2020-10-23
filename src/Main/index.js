@@ -7,6 +7,27 @@ import {
 export default solve
 
 /**
+ * Natural[1, 9]
+ * @typedef {Natural[1, 9]} Val
+ */
+
+ /**
+ * (listof Val|false)
+ * @typedef {(listof Val|false)} Board
+ */
+
+/**
+ * Natural[0, 80]
+ * @typedef {Natural[0, 80]} Pos
+ */
+
+ /**
+  * (listof Pos), fix length - 9
+  * @typedef {(listof Pos)} Unit
+  */
+
+  
+/**
  * produce a solution for b, or false if b is unsolvable
  *
  * @param   {Board}  b
@@ -129,7 +150,7 @@ export function valid_board(b) {
   /**
    * produce a list of val or false of the unit
    *
-   * @param   {unit}  u
+   * @param   {Unit}  u
    *
    * @return  {(listof Val|false)}
    */
