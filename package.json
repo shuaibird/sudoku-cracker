@@ -1,6 +1,6 @@
 {
-  "name": "@pankod/svelte-boilerplate",
-  "author": "Pankod <info@pankod.com>",
+  "name": "sudoku-cracker",
+  "author": "shuaibird <shuaibird@icloud.com>",
   "version": "0.0.1",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack",
